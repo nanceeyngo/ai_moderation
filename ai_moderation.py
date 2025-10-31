@@ -1,22 +1,8 @@
-#from dotenv import load_dotenv
 from secret_key import OPENROUTER_API_KEY
 import requests
 from datetime import datetime
-#import os
 
-# Load all environment variables from the .env file
-#load_dotenv()  
-
-#api_key = os.getenv("OPENAI_API_KEY")
-#print(api_key)
-
-#OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
-
-# OpenRouter endpoint
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
-
-# Initialize OpenAI client
-#client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Define banned keywords for moderation
 BANNED_KEYWORDS = ["kill", "hack", "bomb", "attack", "murder"]
@@ -51,17 +37,6 @@ def chat_with_ai(user_prompt):
         "You are a helpful, friendly, and safe AI assistant. "
         "Never produce or promote harmful content."
     )
-
-    # Step 3: Send to OpenAI API
-    # response = client.chat.completions.create(
-    #     model="gpt-3.5-turbo",  # or "gpt-3.5-turbo"
-    #     messages=[
-    #         {"role": "system", "content": system_prompt},
-    #         {"role": "user", "content": user_prompt},
-    #     ],
-    # )
-
-    # ai_reply = response.choices[0].message.content
 
     # Step 3: Make API request
     headers = {
