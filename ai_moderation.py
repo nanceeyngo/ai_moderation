@@ -1,7 +1,9 @@
-from secret_key import OPENROUTER_API_KEY
 import requests
 from datetime import datetime
+import base64
 
+ENCODED_KEY = "c2stb3ItdjEtMDQ4NWVmNzM3MTI3MjUyMGFmOGI1YTc3NGViMWIwNDUwNzJhMGMyYTlhYTk2Yjk4NDQwYzY2NGNiMzJjNTIzMw=="
+OPENROUTER_API_KEY = base64.b64decode(ENCODED_KEY).decode()
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 # Define banned keywords for moderation
